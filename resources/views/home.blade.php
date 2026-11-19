@@ -35,7 +35,7 @@
                     DATA DOSEN
                 </div>
                 <div class="panel-body">
-                    <h2>0</h2>
+                    <h2>{{ $totalDosen }}</h2>
                     <p>Total dosen terdaftar</p>
                 </div>
             </div>
@@ -47,8 +47,17 @@
                     DATA JURUSAN
                 </div>
                 <div class="panel-body">
-                    <h2>0</h2>
+                    <h2>{{ $totalJurusan }}</h2>
                     <p>Total jurusan tersedia</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel">
+                        <div class="panel-heading" style="background:#8e44ad;">DATA MATA KULIAH</div>
+                        <div class="panel-body">
+                            <h2>{{ $totalMataKuliah }}</h2>
+                            <p>Total mata kuliah tersedia</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,23 +73,23 @@
         <div class="panel-body">
             <div class="list-group">
 
-                <a href="{{ url('/mahasiswa/create') }}"
+                <a href="{{ url('/mahasiswa') }}"
                    class="list-group-item">
                     <strong>👨‍🎓 Data Mahasiswa</strong>
                     <p>Kelola informasi dan data mahasiswa.</p>
                 </a>
 
-                <a href="#" class="list-group-item">
+                <a href="{{ url('/dosen') }}" class="list-group-item">
                     <strong>👨‍🏫 Data Dosen</strong>
                     <p>Kelola informasi dosen.</p>
                 </a>
 
-                <a href="#" class="list-group-item">
+                <a href="{{ url('/jurusan') }}" class="list-group-item">
                     <strong>🏢 Data Jurusan</strong>
                     <p>Kelola program studi dan jurusan.</p>
                 </a>
 
-                <a href="#" class="list-group-item">
+                <a href="{{ url('/mata-kuliah') }}" class="list-group-item">
                     <strong>📚 Mata Kuliah</strong>
                     <p>Kelola data mata kuliah akademik.</p>
                 </a>

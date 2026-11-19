@@ -28,9 +28,12 @@ Route::get('/belajar-controller', 'BelajarController@index');
 Route::get('/profil', function () {
     return view('profil');
 });
-Route::get('/mahasiswa/create', 'MahasiswaController@create');
-
-Route::post('/mahasiswa', 'MahasiswaController@store');
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('mahasiswa', 'MahasiswaController');
+    Route::resource('dosen', 'DosenController');
+    Route::resource('jurusan', 'JurusanController');
+    Route::resource('mata-kuliah', 'MataKuliahController');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -62,14 +62,17 @@
 
                 <div class="form-group">
                     <label>Jurusan</label>
-                    <input
-                        type="text"
-                        name="jurusan"
-                        class="form-control"
-                        value="{{ old('jurusan') }}"
-                        placeholder="Contoh: Teknik Informatika"
-                        required
-                    >
+                    <select name="jurusan_id" class="form-control" required>
+                        <option value="">-- Pilih Jurusan --</option>
+                        @foreach ($jurusans as $jurusan)
+                            <option value="{{ $jurusan->id }}" {{ old('jurusan_id') == $jurusan->id ? 'selected' : '' }}>
+                                {{ $jurusan->nama }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @if ($jurusans->isEmpty())
+                        <small>Belum ada jurusan. <a href="{{ url('/jurusan/create') }}">Tambah jurusan</a> terlebih dahulu.</small>
+                    @endif
                 </div>
 
                 <hr>
@@ -79,10 +82,10 @@
                         Simpan Mahasiswa
                     </button>
 
-                    <a href="{{ url('/home') }}"
+                    <a href="{{ url('/mahasiswa') }}"
                        class="btn"
                        style="background:#6b7280;">
-                        Kembali ke Dashboard
+                        Kembali ke Daftar Mahasiswa
                     </a>
                 </div>
 

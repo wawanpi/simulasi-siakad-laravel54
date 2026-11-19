@@ -11,6 +11,12 @@ class Mahasiswa extends Model
     protected $fillable = [
         'nama',
         'nim',
-        'jurusan'
+        'jurusan',
+        'jurusan_id'
     ];
+
+    public function jurusanData()
+    {
+        return $this->belongsTo(Jurusan::class, 'jurusan_id');
+    }
 }

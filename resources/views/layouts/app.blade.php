@@ -268,7 +268,10 @@
         @if (Auth::check())
             <nav class="nav-menu">
                 <a href="{{ url('/home') }}">Dashboard</a>
-                <a href="{{ url('/mahasiswa/create') }}">Mahasiswa</a>
+                <a href="{{ url('/mahasiswa') }}">Mahasiswa</a>
+                <a href="{{ url('/dosen') }}">Dosen</a>
+                <a href="{{ url('/jurusan') }}">Jurusan</a>
+                <a href="{{ url('/mata-kuliah') }}">Mata Kuliah</a>
 
                 <form action="{{ url('/logout') }}" method="POST">
                     {{ csrf_field() }}
