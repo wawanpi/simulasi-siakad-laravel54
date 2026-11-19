@@ -55,7 +55,12 @@ class JurusanController extends Controller
 
     public function destroy($id)
     {
-        Jurusan::findOrFail($id)->delete();
+        $jurusan = Jurusan::findOrFail($id);
+        if ($jurusan->dosens()->exists() || $jurusan->mataKuliah()->exists() || $jurusan->mahasiswas()->exists()) {
+            return redirect('/jurusan')->with('error', 'Jurusan tidak dapat dihapus karena masih digunakan oleh data akademik.');
+        }
+
+        $jurusan->delete();
         return redirect('/jurusan')->with('success', 'Data jurusan berhasil dihapus!');
     }
 }

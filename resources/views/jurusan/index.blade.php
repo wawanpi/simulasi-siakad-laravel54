@@ -3,6 +3,7 @@
 @section('content')
 <div class="container"><h2>Data Jurusan</h2>
 @if (session('success')) <div class="alert">{{ session('success') }}</div> @endif
+@if (session('error')) <div class="alert" style="background:#fdecea;color:#a94442;">{{ session('error') }}</div> @endif
 <p><a href="{{ url('/jurusan/create') }}" class="btn">Tambah Jurusan</a> <a href="{{ url('/home') }}" class="btn" style="background:#6b7280;">Kembali ke Dashboard</a></p>
 <div class="panel"><div class="panel-body" style="overflow-x:auto;"><table width="100%" cellpadding="10" cellspacing="0" border="1" style="border-collapse:collapse;">
 <tr><th>Kode</th><th>Nama Jurusan</th><th>Keterangan</th><th>Aksi</th></tr>

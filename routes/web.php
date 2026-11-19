@@ -29,10 +29,10 @@ Route::get('/profil', function () {
     return view('profil');
 });
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('mahasiswa', 'MahasiswaController');
-    Route::resource('dosen', 'DosenController');
-    Route::resource('jurusan', 'JurusanController');
-    Route::resource('mata-kuliah', 'MataKuliahController');
+    Route::resource('mahasiswa', 'MahasiswaController', ['except' => ['show']]);
+    Route::resource('dosen', 'DosenController', ['except' => ['show']]);
+    Route::resource('jurusan', 'JurusanController', ['except' => ['show']]);
+    Route::resource('mata-kuliah', 'MataKuliahController', ['except' => ['show']]);
 });
 Auth::routes();
 
