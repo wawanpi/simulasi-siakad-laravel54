@@ -5,17 +5,17 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^8.0.2",
-        "laravel/framework": "9.52.16",
-        "laravel/tinker": "^2.7",
+        "php": "^8.1",
+        "laravel/framework": "10.48.22",
+        "laravel/tinker": "^2.8",
         "laravel/ui": "~4.0"
     },
     "require-dev": {
-        "spatie/laravel-ignition": "^1.0",
+        "spatie/laravel-ignition": "^2.0",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^6.1",
-        "phpunit/phpunit": "^9.5.10",
+        "nunomaduro/collision": "^7.0",
+        "phpunit/phpunit": "^10.1",
         "laravel/legacy-factories": "^1.0"
     },
     "autoload": {
